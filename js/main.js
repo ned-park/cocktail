@@ -17,22 +17,21 @@
  }
  
  function display() {
-   console.log(cache)
    let drink = cache.drinks[current]
-   document.querySelector('h2').innerText = drink.strDrink
-   document.querySelector('h3').innerText = drink.strInstructions
+   document.querySelectorAll('.hidden').forEach(e => e.classList.toggle('hidden'))
+   document.querySelector('#name').innerText = drink.strDrink
+   document.querySelector('#instructions').innerText = drink.strInstructions
    document.querySelector('img').src = drink.strDrinkThumb
    document.querySelector('img').alt = drink.strDrink
  
    let ingredients = []
-   for (let i = 0; i < 20; i++) {
-     let ingredientNum = `strIngredient${i}`
-     let ingredient = drink[ingredientNum]
-     if (ingredient === null) 
+   for (let i = 1; i < 20; i++) {
+     let ingredient = drink[`strIngredient${i}`]
+     if (ingredient === null || ingredient === '') 
        break
      ingredients.push(ingredient)
    }
-   console.log(ingredients)
+   document.querySelector('#ingredients').innerHTML = ingredients.reduce((str, i) => `${str}<li>${i}</li>`, '')
  }
  
  function getCocktail() {
