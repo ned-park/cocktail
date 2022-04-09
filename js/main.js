@@ -14,6 +14,8 @@
    current = current < 0? current + max : current
  
    display()
+   //Make automatic carousel
+   setTimeout(() => cycle(direction), 5000)
  }
  
  function display() {
