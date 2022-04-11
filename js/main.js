@@ -24,11 +24,12 @@ function cycle(direction) {
 
 function display() {
   let drink = cache.drinks[current]
+  document.querySelector('img').src = drink.strDrinkThumb
+  document.querySelector('img').alt = drink.strDrink
   document.querySelectorAll('.hidden').forEach(e => e.classList.toggle('hidden'))
   document.querySelector('#name').innerText = drink.strDrink
   document.querySelector('#instructions').innerText = drink.strInstructions
-  document.querySelector('img').src = drink.strDrinkThumb
-  document.querySelector('img').alt = drink.strDrink
+
 
   let ingredients = []
   for (let i = 1; i < 20; i++) {

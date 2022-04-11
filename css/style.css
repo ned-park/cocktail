@@ -12,9 +12,43 @@
 /*******************************************/
 img{
   display: block;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  max-width: 60%;
+  height: auto;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex button{
+  align-self: stretch;
+  background:#fff;
+  color: #000;
+  border: none;
+  padding: 5px 10px;
+  width: 5%;
+  font-weight: bold;
+}
+
+.flex button:hover {
+  background: rgba(135, 207, 235, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+.ingredients, header{
+  width: 60%;
+  margin: auto;
+}
+
+.ingredients h3 {
+  text-align: center;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
