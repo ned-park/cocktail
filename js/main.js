@@ -46,10 +46,10 @@ function getCocktail() {
   fetch(`https:///www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
     .then(res => res.json())
     .then(data => {
-      current = 0
       cache = data
+	  current = cache.drinks.length -1
       running = false
-      display()
+	  cycle(1)
     })
     .catch(err => {
       console.log(err)
